@@ -1,17 +1,17 @@
 {
   "name": "termqr",
   "description": "Generate qr to share file or directory with mobile phone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "jsnanigans @jsnanigans",
   "bin": {
     "termqr": "./bin/run"
   },
   "bugs": "https://github.com/jsnanigans/termqr/issues",
   "dependencies": {
+    "@oclif/command": "^1.4.6",
     "qrcode": "^1.2.0"
   },
   "devDependencies": {
-    "@oclif/command": "^1.4.6",
     "@oclif/config": "^1.3.62",
     "@oclif/plugin-help": "^1.2.1",
     "@types/qrcode": "^0.8.1",
