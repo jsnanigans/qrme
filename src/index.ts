@@ -76,7 +76,7 @@ const startServer = (options: any = {}) => {
 
 const checkFile = (file: string) => {
   const rt: any = {}
-  const filePath = path.join(__dirname, '..', file)
+  const filePath = path.join(path.resolve('./'), file)
 
   const exists = fs.existsSync(filePath)
   if (!exists) {
@@ -96,23 +96,15 @@ const getLocalIp = (): string => {
   let ip: string = ''
 
   Object.keys(ifaces).forEach(function (ifname) {
-    let alias = 0
-
     ifaces[ifname].forEach(function (iface: any) {
       if (iface.family !== 'IPv4' || iface.internal !== false) {
         // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
         return
       }
 
-      // return iface.address
-      if (alias >= 1) {
-        // this single interface has multiple ipv4 addresses
-        ip = iface.address
-      } else {
-        // this interface has only one ipv4 adress
+      if (iface.address.indexOf('192.168') === 0) {
         ip = iface.address
       }
-      ++alias
     })
   })
 
@@ -123,7 +115,7 @@ class termqr extends Command {
   static args = [{name: 'file'}]
 
   async run() {
-    const {args, flags} = this.parse(termqr)
+    const {args} = this.parse(termqr)
     const {file} = args
 
     const port = 8899
