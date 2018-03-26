@@ -76,7 +76,7 @@ const startServer = (options: any = {}) => {
 
 const checkFile = (file: string) => {
   const rt: any = {}
-  const filePath = path.join(__dirname, '..', file)
+  const filePath = path.join(path.resolve('./'), file)
 
   const exists = fs.existsSync(filePath)
   if (!exists) {
