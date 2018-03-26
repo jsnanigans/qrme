@@ -8,12 +8,12 @@ import * as fs from 'fs'
 import * as http from 'http'
 import * as path from 'path'
 
-// class Qrme extends Command {
+// class termqr extends Command {
 //   static description = 'describe the command here'
 
 //   static examples = [
-//     `$ qrme
-// hello world from ./src/qrme.ts!
+//     `$ termqr
+// hello world from ./src/termqr.ts!
 // `,
 //   ]
 
@@ -31,7 +31,7 @@ import * as path from 'path'
 //   static args = [{name: 'file'}]
 
 //   async run() {
-//     const {args, flags} = this.parse(Qrme)
+//     const {args, flags} = this.parse(termqr)
 
 //     const name = flags.name || 'world'
 //     this.log(`hello ${name} from ${__filename}!`)
@@ -119,11 +119,11 @@ const getLocalIp = (): string => {
   return ip
 }
 
-class Qrme extends Command {
+class termqr extends Command {
   static args = [{name: 'file'}]
 
   async run() {
-    const {args, flags} = this.parse(Qrme)
+    const {args, flags} = this.parse(termqr)
     const {file} = args
 
     const port = 8899
@@ -153,4 +153,4 @@ class Qrme extends Command {
   }
 }
 
-export = Qrme
+export = termqr

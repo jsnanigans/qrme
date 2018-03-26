@@ -1,12 +1,12 @@
 {
-  "name": "qrme",
+  "name": "termqr",
   "description": "Generate qr to share file or directory with mobile phone",
   "version": "0.1.0",
   "author": "jsnanigans @jsnanigans",
   "bin": {
-    "qrme": "./bin/run"
+    "termqr": "./bin/run"
   },
-  "bugs": "https://github.com/jsnanigans/qrme/issues",
+  "bugs": "https://github.com/jsnanigans/termqr/issues",
   "dependencies": {
     "qrcode": "^1.2.0"
   },
@@ -34,16 +34,16 @@
     "/bin",
     "/lib"
   ],
-  "homepage": "https://github.com/jsnanigans/qrme",
+  "homepage": "https://github.com/jsnanigans/termqr",
   "keywords": [
     "oclif"
   ],
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
-    "bin": "qrme"
+    "bin": "termqr"
   },
-  "repository": "jsnanigans/qrme",
+  "repository": "jsnanigans/termqr",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "lint": "tsc -p test --noEmit && tslint -p test -t stylish",

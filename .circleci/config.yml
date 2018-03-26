@@ -49,7 +49,7 @@ jobs:
 
 workflows:
   version: 2
-  "qrme":
+  "termqr":
     jobs:
       - node-latest
       - node-8
