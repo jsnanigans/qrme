@@ -1,7 +1,11 @@
 {
   "name": "termqr",
   "description": "Generate qr to share file or directory with mobile phone",
+<<<<<<< HEAD
   "version": "0.1.6",
+=======
+  "version": "0.1.5",
+>>>>>>> 584c6de2e0f25c66e9b0b530771897f531933f58
   "author": "jsnanigans @jsnanigans",
   "bin": {
     "termqr": "./bin/run"
