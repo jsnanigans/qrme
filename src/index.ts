@@ -1,12 +1,12 @@
 import {Command, flags} from '@oclif/command'
-import * as QRCode from 'qrcode'
-const os = require('os')
-
-// const crypto = require('crypto')
-// const fs = require('fs')
 import * as fs from 'fs'
 import * as http from 'http'
 import * as path from 'path'
+import * as QRCode from 'qrcode'
+const ip = require('ip').address()
+
+// const crypto = require('crypto')
+// const fs = require('fs')
 
 // class termqr extends Command {
 //   static description = 'describe the command here'
@@ -91,26 +91,6 @@ const checkFile = (file: string) => {
   return rt
 }
 
-const getLocalIp = (): string => {
-  let ifaces = os.networkInterfaces()
-  let ip: string = ''
-
-  Object.keys(ifaces).forEach(function (ifname) {
-    ifaces[ifname].forEach(function (iface: any) {
-      if (iface.family !== 'IPv4' || iface.internal !== false) {
-        // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
-        return
-      }
-
-      if (iface.address.indexOf('192.168') === 0) {
-        ip = iface.address
-      }
-    })
-  })
-
-  return ip
-}
-
 class termqr extends Command {
   static args = [{name: 'file'}]
 
@@ -119,7 +99,7 @@ class termqr extends Command {
     const {file} = args
 
     const port = 8899
-    const ip = getLocalIp()
+    // const my_ip = ip.address()
     const url = `http://${ip}:${port}`
 
     const {meta, error, filePath} = checkFile(file)
